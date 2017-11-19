@@ -115,7 +115,6 @@ public class DefaultApplicationFactory implements ApplicationFactory {
         return UriComponentsBuilder.fromHttpUrl(getManagementUrl())
                                    .path("/")
                                    .path(getHealthEndpointPath())
-                                   .path("/")
                                    .toUriString();
     }
 

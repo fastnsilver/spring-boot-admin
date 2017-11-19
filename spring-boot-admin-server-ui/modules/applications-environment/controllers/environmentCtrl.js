@@ -21,7 +21,7 @@ module.exports = function ($scope, $http, application) {
   $scope.application = application;
   $scope.refreshSupported = false;
 
-  $http.head('api/applications/' + application.id + '/refresh').catch(function (response) {
+  $http.head('api/applications/' + application.id + '/application/refresh').catch(function (response) {
     $scope.refreshSupported = response.status === 405; //If method not allowed is returned the endpoint is present.
   });
 

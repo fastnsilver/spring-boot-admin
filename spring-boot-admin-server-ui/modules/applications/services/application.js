@@ -41,47 +41,47 @@ module.exports = function ($resource, $http) {
   };
 
   Application.prototype.getHealth = function () {
-    return $http.get('api/applications/' + this.id + '/health').then(convert);
+    return $http.get('api/applications/' + this.id + '/application/health').then(convert);
   };
 
   Application.prototype.getInfo = function () {
-    return $http.get('api/applications/' + this.id + '/info').then(convert);
+    return $http.get('api/applications/' + this.id + '/application/info').then(convert);
   };
 
   Application.prototype.getMetrics = function () {
-    return $http.get('api/applications/' + this.id + '/metrics').then(convert);
+    return $http.get('api/applications/' + this.id + '/application/metrics').then(convert);
   };
 
   Application.prototype.getEnv = function (key) {
-    return $http.get('api/applications/' + this.id + '/env' + (key ? '/' + key : '')).then(convert);
+    return $http.get('api/applications/' + this.id + '/application/env' + (key ? '/' + key : '')).then(convert);
   };
 
   Application.prototype.setEnv = function (map) {
-    return $http.post('api/applications/' + this.id + '/env', '', { params: map }).then(convert);
+    return $http.post('api/applications/' + this.id + '/application/env', '', { params: map }).then(convert);
   };
 
   Application.prototype.resetEnv = function () {
-    return $http.post('api/applications/' + this.id + '/env/reset').then(convert);
+    return $http.post('api/applications/' + this.id + '/application/env/reset').then(convert);
   };
 
   Application.prototype.refresh = function () {
-    return $http.post('api/applications/' + this.id + '/refresh').then(convert);
+    return $http.post('api/applications/' + this.id + '/application/refresh').then(convert);
   };
 
   Application.prototype.getThreadDump = function () {
-    return $http.get('api/applications/' + this.id + '/dump').then(convertArray);
+    return $http.get('api/applications/' + this.id + '/application/threaddump').then(convertArray);
   };
 
   Application.prototype.getTraces = function () {
-    return $http.get('api/applications/' + this.id + '/trace').then(convertArray);
+    return $http.get('api/applications/' + this.id + '/application/trace').then(convertArray);
   };
 
   Application.prototype.getLoggers = function () {
-    return $http.get('api/applications/' + this.id + '/loggers').then(convertArray);
+    return $http.get('api/applications/' + this.id + '/application/loggers').then(convertArray);
   };
 
   Application.prototype.setLoggerLevel = function (logger, level) {
-    return $http.post('api/applications/' + this.id + '/loggers/' + logger, { configuredLevel: level });
+    return $http.post('api/applications/' + this.id + '/application/loggers/' + logger, { configuredLevel: level });
   };
 
   return Application;

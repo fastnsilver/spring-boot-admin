@@ -6,7 +6,7 @@
         <input placeholder="Filter" class="input-xxlarge" type="search" ng-model="searchFilter"/>
     </div>
     <sba-info-panel ng-repeat="metric in metrics | orderBy:'name'" panel-title="{{ metric.name }}"
-                    raw="api/applications/{{ application.id }}/metrics/{{ metric.name }}.*"
+                    raw="api/applications/{{ application.id }}/application/metrics/{{ metric.name }}.*"
                     ng-show="!searchFilter || (metric.values | filter:searchFilter).length > 0">
         <table class="table">
             <tr ng-if="showRichGauges" ng-repeat="m in metric.values | filter:searchFilter">

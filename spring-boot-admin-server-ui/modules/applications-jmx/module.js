@@ -46,7 +46,7 @@ module.run(function (ApplicationViews, $sce, $http, jolokia, ApplicationJmx) {
     title: $sce.trustAsHtml('<i class="fa fa-cogs fa-fw"></i>JMX'),
     state: 'applications.jmx',
     show: function (application) {
-      return $http.head('api/applications/' + application.id + '/jolokia').then(function () {
+      return $http.head('api/applications/' + application.id + '/application/jolokia').then(function () {
         return ApplicationJmx.list(application).then(function () {
           return true;
         }).catch(function () {

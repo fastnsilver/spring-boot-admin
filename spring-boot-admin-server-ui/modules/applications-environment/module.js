@@ -38,7 +38,7 @@ module.run(function (ApplicationViews, $http, $sce) {
     title: $sce.trustAsHtml('<i class="fa fa-server fa-fw"></i>Environment'),
     state: 'applications.environment',
     show: function (application) {
-      return $http.head('api/applications/' + application.id + '/env').then(function () {
+      return $http.head('api/applications/' + application.id + '/application/env').then(function () {
         return true;
       }).catch(function () {
         return false;

@@ -2,7 +2,7 @@
 	<div class="alert alert-error" ng-if="error">
 		<b>Error:</b> {{ error }}
 	</div>
-	<sba-info-panel panel-title="Active profiles" raw="api/applications/{{ application.id }}/env">
+	<sba-info-panel panel-title="Active profiles" raw="api/applications/{{ application.id }}/application/env">
 		<table class="table">
 			<tr>
 				<td>{{profiles.join(', ') || '-'}}</td>

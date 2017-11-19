@@ -40,7 +40,7 @@ module.run(function (ApplicationViews, $sce, $http) {
     title: $sce.trustAsHtml('<i class="fa fa-file-text-o fa-fw"></i>Log'),
     state: 'applications.logfile',
     show: function (application) {
-      return $http.head('api/applications/' + application.id + '/logfile').then(function () {
+      return $http.head('api/applications/' + application.id + '/application/logfile').then(function () {
         return true;
       }).catch(function () {
         return false;

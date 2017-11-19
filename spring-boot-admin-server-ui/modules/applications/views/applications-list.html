@@ -39,7 +39,7 @@
                 ng-click="application.group.collapsed = application.group.applicationCount > 1"><i
                     ng-show="application.group.applicationCount > 1 &amp;&amp; (searchFilter == '' || searchFilter == undefined)"
                     class="fa fa-minus"></i></td>
-            <td class="name-column">{{ application.name }} ({{ application.id }})<br/>
+            <td class="name-column">{{ application.name }} ({{ application.id }}/application)<br/>
                 <span class="muted"
                       ng-bind="application.serviceUrl || application.managementUrl || application.healthUrl"></span>
             </td>

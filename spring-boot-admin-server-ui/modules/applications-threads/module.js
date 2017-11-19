@@ -39,7 +39,7 @@ module.run(function (ApplicationViews, $http, $sce) {
     title: $sce.trustAsHtml('<i class="fa fa-list fa-fw"></i>Threads'),
     state: 'applications.threads',
     show: function (application) {
-      return $http.head('api/applications/' + application.id + '/dump').then(function () {
+      return $http.head('api/applications/' + application.id + '/application/dump').then(function () {
         return true;
       }).catch(function () {
         return false;

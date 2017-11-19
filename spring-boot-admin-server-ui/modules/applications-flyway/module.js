@@ -36,7 +36,7 @@ module.run(function (ApplicationViews, $http, $sce) {
     title: $sce.trustAsHtml('<i class="fa fa-database fa-fw"></i>Flyway'),
     state: 'applications.flyway',
     show: function (application) {
-      return $http.head('api/applications/' + application.id + '/flyway').then(function () {
+      return $http.head('api/applications/' + application.id + '/application/flyway').then(function () {
         return true;
       }).catch(function () {
         return false;

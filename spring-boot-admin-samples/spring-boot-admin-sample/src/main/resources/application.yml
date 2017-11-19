@@ -8,7 +8,7 @@ logging:
 
 management:
   context-path: "/actuator"
-
+        
 spring:
   application:
     name: "@pom.artifactId@"
@@ -42,8 +42,13 @@ spring:
           user.password:  "${user.default.password}" #can access the protected client endpoints
 
 # @see https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-Security-2.0#changing-the-username-and-password
-#
 user:
   default:
     name: admin
     password: admin
+
+management:
+  endpoints:
+    web:
+      expose: 
+        - "*"

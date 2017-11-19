@@ -37,7 +37,7 @@ module.run(function (ApplicationViews, $sce, $http) {
     title: $sce.trustAsHtml('<i class="fa fa-user-circle-o fa-fw"></i>Audit'),
     state: 'applications.auditevents',
     show: function (application) {
-      return $http.head('api/applications/' + application.id + '/auditevents').then(function () {
+      return $http.head('api/applications/' + application.id + '/application/auditevents').then(function () {
         return true;
       }).catch(function () {
         return false;

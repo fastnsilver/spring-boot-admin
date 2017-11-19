@@ -39,7 +39,7 @@ module.run(function (ApplicationViews, $http, $sce) {
     title: $sce.trustAsHtml('<i class="fa fa-bar-chart fa-fw"></i>Metrics'),
     state: 'applications.metrics',
     show: function (application) {
-      return $http.head('api/applications/' + application.id + '/metrics').then(function () {
+      return $http.head('api/applications/' + application.id + '/application/metrics').then(function () {
         return true;
       }).catch(function () {
         return false;

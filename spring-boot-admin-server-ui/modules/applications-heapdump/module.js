@@ -28,7 +28,7 @@ module.run(function ($sce, $http, ApplicationViews) {
     href: 'api/applications/{id}/heapdump',
     target: '_blank',
     show: function (application) {
-      return $http({ method: 'OPTIONS', url: 'api/applications/' + application.id + '/heapdump' }).then(function (response) {
+      return $http({ method: 'OPTIONS', url: 'api/applications/' + application.id + '/application/heapdump' }).then(function (response) {
         return response.headers('Allow') === 'GET,HEAD'; //Test the exact headers, in case the DispatcherServlet responses to the request for older boot-versions
       }).catch(function () {
         return false;

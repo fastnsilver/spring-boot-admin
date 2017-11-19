@@ -24,7 +24,7 @@ public class DefaultServiceInstanceConverterTest {
 		assertThat(application.getName(), is("test"));
 		assertThat(application.getServiceUrl(), is("http://localhost:80/"));
 		assertThat(application.getManagementUrl(), is("http://localhost:80/"));
-		assertThat(application.getHealthUrl(), is("http://localhost:80/health"));
+		assertThat(application.getHealthUrl(), is("http://localhost:80/application/health"));
 	}
 
 	@Test

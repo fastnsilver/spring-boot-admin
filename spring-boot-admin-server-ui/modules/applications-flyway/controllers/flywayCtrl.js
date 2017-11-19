@@ -25,7 +25,7 @@ module.exports = function ($scope, $http, application) {
   $scope.searchFilter;
 
   $scope.refresh = function () {
-    $http.get('api/applications/' + application.id + '/flyway').then(function (response) {
+    $http.get('api/applications/' + application.id + '/application/flyway').then(function (response) {
       if (Array.isArray(response.data) && (response.data.length === 0 || response.data[0].hasOwnProperty('name'))) {
         $scope.reports = response.data;
       } else {

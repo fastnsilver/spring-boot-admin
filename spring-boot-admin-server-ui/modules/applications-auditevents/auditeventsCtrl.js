@@ -49,7 +49,7 @@ module.exports = function ($scope, $http, application) {
 
   $scope.search = function () {
     $http({
-      url: 'api/applications/' + application.id + '/auditevents',
+      url: 'api/applications/' + application.id + '/application/auditevents',
       method: 'GET',
       params: {
         principal: trimToNull($scope.filter.principal),
